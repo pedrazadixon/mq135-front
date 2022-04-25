@@ -1,0 +1,159 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>mq135</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/fonts/fa/css/all.min.css" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- App -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body style="background-image: url('img/fondo.jpg'); background-size: cover;">
+  <!-- Start your project here-->
+
+  <section style="cursor: default;">
+    <div class="container py-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-6">
+
+          <div class="card" style="color: #4B515D; border-radius: 35px;">
+            <div class="card-body p-4">
+
+              <div class="d-flex justify-content-center">
+                <!-- <h6 class="flex-grow-1">Parquedero UCC</h6> -->
+                <h6>Calidad del Aire</h6>
+              </div>
+
+              <div class="d-flex flex-column text-center mt-2 mb-0">
+                <h6 class="display-4 mb-0 font-weight-bold text-success" style="color: #1C2331;"> Bueno </h6>
+                <!-- <h6 class="display-4 mb-0 font-weight-bold text-warning" style="color: #1C2331;"> Regular </h6> -->
+                <!-- <h6 class="display-4 mb-0 font-weight-bold text-danger" style="color: #1C2331;"> Peligroso </h6> -->
+                <span class="small" style="color: #868B94"><strong>750 ppm</strong></span>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1" style="font-size: 1rem;">
+                  <div title="Ubicación">
+                    <i class="fas fa-map-location-dot fa-fw" style="color: #868B94;"></i>
+                    <span class="ms-2">Parquedero UCC</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-calendar-day fa-fw" style="color: #868B94;"></i>
+                    <span class="ms-2">2022-04-24 4:20 pm</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-temperature-high fa-fw" style="color: #868B94;"></i>
+                    <span class="ms-2"> 40 °C</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-tint fa-fw" style="color: #868B94;"></i>
+                    <span class="ms-2"> 65 </span>
+                  </div>
+                </div>
+                <div class="d-none d-md-block">
+                  <img src="img/earth-wait.gif" width="150px">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 pt-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Historico de lecturas</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Hora</th>
+                      <th scope="col">Temperatura</th>
+                      <th scope="col">Humedad</th>
+                      <th scope="col">PPM</th>
+                      <th scope="col">Resultado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>2022-02-26</th>
+                      <td>8:25 am</td>
+                      <td>30 °C</td>
+                      <td>59</td>
+                      <td>750</td>
+                      <td><span class="text-success"><strong>Bueno</strong></span></td>
+                    </tr>
+                    <tr>
+                      <th>2022-02-25</th>
+                      <td>7:05 pm</td>
+                      <td>32 °C</td>
+                      <td>63</td>
+                      <td>900</td>
+                      <td><span class="text-warning"><strong>Regular</strong></span></td>
+                    </tr>
+                    <tr>
+                      <th>2022-02-25</th>
+                      <td>3:05 pm</td>
+                      <td>32 °C</td>
+                      <td>50</td>
+                      <td>1200</td>
+                      <td><span class="text-danger"><strong>Peligroso</strong></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-12 pt-4 text-center">
+          <p class="m-0">Trabajo proyecto Aspectos Ambientales - Medidor calidad de aire</p>
+          <p class="m-0">Universidad Cooperativa de Colombia</p>
+          <p class="m-0">2022</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <button type="button" class="btn btn-white btn-lg btn-floating flotante" data-mdb-toggle="modal"
+    data-mdb-target="#modalAyuda">
+    <i class="fas fa-question"></i>
+  </button>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalAyuda" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ayuda / Creditos</h5>
+        </div>
+        <div class="modal-body">...</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-mdb-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End your project here-->
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+</body>
+
+</html>
