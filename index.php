@@ -1,3 +1,19 @@
+<?php
+
+function generarDatos($fecha)
+{
+  return [
+    [$fecha, '10:50 am', 'Terraza 1',  rand(17, 22), rand(76, 78), rand(376, 390)],
+    [$fecha, '11:00 am', 'Terraza 1',  rand(17, 22), rand(76, 78), rand(376, 390)],
+    [$fecha, '11:10 am', 'Terraza 1',  rand(17, 22), rand(76, 78), rand(376, 390)],
+    [$fecha, '11:20 am', 'Terraza 1',  rand(17, 22), rand(76, 78), rand(400, 600)],
+    [$fecha, '11:30 am', 'Terraza 1',  rand(17, 22), rand(76, 78), rand(750, 800)],
+  ];
+}
+
+$datos = array_merge([], generarDatos('2022-05-13'));
+?>
+
 <html lang="es">
 
 <head>
@@ -17,7 +33,7 @@
   <!-- Start your project here-->
 
   <section style="cursor: default;">
-    <div class="container py-5">
+    <div class="container pt-5">
 
       <div class="row d-flex justify-content-center">
         <div class="col-md-8 col-lg-6 col-xl-6">
@@ -41,19 +57,19 @@
                 <div class="flex-grow-1" style="font-size: 1rem;">
                   <div title="Ubicación">
                     <i class="fas fa-map-location-dot fa-fw" style="color: #868B94;"></i>
-                    <span class="ms-2">Parquedero UCC</span>
+                    <span class="ms-2">Terraza 1</span>
                   </div>
                   <div>
                     <i class="fas fa-calendar-day fa-fw" style="color: #868B94;"></i>
-                    <span class="ms-2">2022-04-24 4:20 pm</span>
+                    <span class="ms-2">2022-05-13 4:20 pm</span>
                   </div>
                   <div>
                     <i class="fas fa-temperature-high fa-fw" style="color: #868B94;"></i>
-                    <span class="ms-2"> 40 °C</span>
+                    <span class="ms-2"> 19 °C</span>
                   </div>
                   <div>
                     <i class="fas fa-tint fa-fw" style="color: #868B94;"></i>
-                    <span class="ms-2"> 65 </span>
+                    <span class="ms-2"> 76 </span>
                   </div>
                 </div>
                 <div class="d-none d-md-block">
@@ -85,39 +101,31 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th>2022-02-26</th>
-                      <td>8:25 am</td>
-                      <td>Parquedero UCC</td>
-                      <td>30 °C</td>
-                      <td>59</td>
-                      <td>750</td>
-                      <td><span class="text-success"><strong>Bueno</strong></span></td>
-                    </tr>
-                    <tr>
-                      <th>2022-02-25</th>
-                      <td>7:05 pm</td>
-                      <td>Parquedero UCC</td>
-                      <td>32 °C</td>
-                      <td>63</td>
-                      <td>900</td>
-                      <td><span class="text-warning"><strong>Regular</strong></span></td>
-                    </tr>
-                    <tr>
-                      <th>2022-02-25</th>
-                      <td>3:05 pm</td>
-                      <td>Parquedero UCC</td>
-                      <td>32 °C</td>
-                      <td>50</td>
-                      <td>1200</td>
-                      <td><span class="text-danger"><strong>Peligroso</strong></span></td>
-                    </tr>
+
+                    <?php foreach ($datos as $dato) : ?>
+                      <tr>
+                        <th><?php echo $dato[0] ?></th>
+                        <td><?php echo $dato[1] ?></td>
+                        <td><?php echo $dato[2] ?></td>
+                        <td><?php echo $dato[3] ?>°C</td>
+                        <td><?php echo $dato[4] ?></td>
+                        <td><?php echo $dato[5] ?></td>
+                        <?php if ($dato[5] < 750) : ?>
+                          <td><span class="text-success"><strong>Bueno</strong></span></td>
+                        <?php elseif ($dato[5] > 750 && $dato[5] < 1200) : ?>
+                          <td><span class="text-warning"><strong>Regular</strong></span></td>
+                        <?php else : ?>
+                          <td><span class="text-danger"><strong>Peligroso</strong></span></td>
+                        <?php endif ?>
+                      </tr>
+                    <?php endforeach ?>
+
                   </tbody>
                 </table>
               </div>
 
               <div class="d-grid gap-2 mt-3">
-                <a class="btn btn-info" href="historico.html">Ver historico</a>
+                <a class="btn btn-info" href="historico.php">Ver historico</a>
               </div>
 
             </div>
@@ -137,8 +145,7 @@
     </div>
   </section>
 
-  <button type="button" class="btn btn-white btn-lg btn-floating flotante" data-mdb-toggle="modal"
-    data-mdb-target="#modalAyuda">
+  <button type="button" class="btn btn-white btn-lg btn-floating flotante" data-mdb-toggle="modal" data-mdb-target="#modalAyuda">
     <i class="fas fa-question"></i>
   </button>
 
@@ -150,7 +157,21 @@
         <div class="modal-header">
           <h5 class="modal-title">Ayuda / Creditos</h5>
         </div>
-        <div class="modal-body">...</div>
+        <div class="modal-body">
+          <div>
+            <p>Indicaciones: </p>
+            <p class="text-success">Menor a 750ppm <b>BUENO</b> para humano </p>
+            <p class="text-warning">750ppm - 1200ppm <b>REGULAR</b> para el humano</p>
+            <p class="text-danger">1200ppm - o mas <b>PELIGROSO</b> para el humano</p>
+          </div>
+          <hr>
+          <div class="pt-2">
+            <i>
+              <p>Universidad Cooperativa de Colombia</p>
+              <p>Aspectos Ambientales </p>
+            </i>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-mdb-dismiss="modal">Cerrar</button>
         </div>
